@@ -6,6 +6,7 @@
     box-sizing: border-box;
     letter-spacing: 0.1em;
     font-family: var(--epilogue-font);
+    color: black;
 }
 
 :root {
