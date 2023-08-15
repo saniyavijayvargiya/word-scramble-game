@@ -61,7 +61,7 @@ const initGame = () => {
 
 
 const checkWord = () => {
-    let wordEntered = inputField.value.toUpperCase();
+    let wordEntered = inputField.value.toUpperCase().trim();
     if (!wordEntered || wordEntered === "") {
         return alert("You haven't entered the word.");
     } else if (wordEntered !== correctWord) {
