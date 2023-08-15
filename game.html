@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" description="Saniya">
+    <meta name="description" description="Word Scramble Game">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Word Scramble Game</title>
+</head>
+
+<body>
+    <div class="heading">
+        <div class="heading1">
+            <div class="float1">W</div>
+            <div class="float2">O</div>
+            <div class="float3">R</div>
+            <div class="float4">D</div>
+        </div>
+
+        <div class="heading2">
+            <div class="float1">S</div>
+            <div class="float2">C</div>
+            <div class="float3">R</div>
+            <div class="float4">A</div>
+            <div class="float1">M</div>
+            <div class="float2">B</div>
+            <div class="float3">L</div>
+            <div class="float4">E</div>
+        </div>
+    </div>
+    
+    <div class="score-and-timer">
+        <div class="scorediv">
+            <h3>score: &nbsp; <span id="score"></span></h3>
+        </div>
+
+        <div class="timer">
+            <h3>time left: &nbsp; <span id="time"></span>s</h3>
+        </div>
+    </div>
+
+    <div class="currentword">
+        <h1 id="word"></h1>
+        <h3 id="meaning"></h3>
+    </div>
+
+    <div class="input">
+        <input type="text" id="checkword" name="checkword" placeholder="enter your guess" required autofocus>
+    </div>
+    
+    <div class="buttons">
+        <button type="submit" class="submit" name="submit">submit</button>
+
+        <button type="reset" class="reset" name="reset" onclick="document.getElementById('checkword').value = ''">reset</button>
+    </div>
+
+    <script src="words.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+</body>
+
+
+
+</html>

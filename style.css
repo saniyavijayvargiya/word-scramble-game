@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@800&family=Sora:wght@700&display=swap');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 0.1em;
+    font-family: var(--epilogue-font);
+}
+
+:root {
+    --orange-color: #F65C51;
+    --green-color: #54C6BE;
+    --yellow-color: #ffffe0;
+    --epilogue-font: "Epilogue", sans-serif;
+    --sora-font: "Sora", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--green-color);
+}
+
+.heading1, .heading2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.1em;
+    padding: 1rem;
+    font-family: var(--epilogue-font);
+    font-size: 4rem;
+    text-shadow: 3px 2px var(--orange-color);
+}
+
+.heading {
+    margin: 2rem 0 4rem 0;
+}
+
+.float1 {
+    animation: float1 2s ease-in-out forwards infinite;
+}
+
+.float2 {
+    animation: float2 3s ease-in-out forwards infinite;
+}
+
+.float3 {
+    animation: float3 3s ease-in-out forwards infinite;
+}
+
+.float4 {
+    animation: float4 3s ease-in-out forwards infinite;
+}
+
+@keyframes float1 {
+    0% {
+        transform: translateY(19px) rotateZ(-5deg);
+    }
+    50% {
+        transform: translateY(14px) rotateZ(2deg);
+    }
+    100% {
+        transform: translateY(19px) rotateZ(-5deg);
+    }
+}
+
+@keyframes float2 {
+    0% {
+        transform: translateY(14px) rotateZ(-3deg);
+    }
+    50% {
+        transform: translateY(9px) rotateZ(4deg);
+    }
+    100% {
+        transform: translateY(14px) rotateZ(-3deg);
+    }
+}
+
+@keyframes float3 {
+    0% {
+        transform: translateY(8px) rotateZ(0deg);
+    }
+    50% {
+        transform: translateY(13px) rotateZ(-5deg);
+    }
+    100% {
+        transform: translateY(8px) rotateZ(0deg);
+    }
+}
+
+@keyframes float4 {
+    0% {
+        transform: translateY(14px) rotateZ(-2deg);
+    }
+    50% {
+        transform: translateY(9px) rotateZ(5deg);
+    }
+    100% {
+        transform: translateY(14px) rotateZ(-2deg);
+    }
+}
+
+.score-and-timer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+}
+
+.timer, .scorediv {
+    width: 30vw;
+    height: 10vh;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    display: grid;
+    place-content: center;
+    font-family: var(--sora-font);
+    box-shadow: 4px 4px 0 var(--yellow-color);
+    animation: timerfloat 3s ease-in-out forwards infinite;
+}
+
+@keyframes timerfloat {
+    0% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.currentword {
+    display: grid;
+    place-content: center;
+    padding: 1.5rem;
+    gap: 1rem;
+    text-align: center;
+}
+
+#word {
+    font-family: var(--sora-font);
+    letter-spacing: 0.2em;
+    font-size: 3rem;
+    text-shadow: 3px 3px 2px var(--yellow-color);
+}
+
+#word:hover {
+    animation: hovering 3s ease-in-out forwards;
+}
+
+@keyframes hovering {
+    0% {
+        transform: scale(100%);
+    }
+    50% {
+        transform: scale(115%);
+    }
+    100% {
+        transform: scale(100%s);
+    }
+}
+
+#meaning {
+    font-family: var(--epilogue-font);
+    font-size: 1.3rem;
+}
+
+#meaning::before {
+    content: '❝';
+}
+
+#meaning::after {
+    content: '❞';
+}
+
+.input {
+    display: grid;
+    place-content: center;
+}
+
+#checkword {
+    font: inherit;
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center;
+    border: 2px solid black;
+    width: 50vw;
+    border-radius: 0.5rem;
+}
+
+.buttons {
+    font-family: var(--sora-font);
+    margin: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.submit, .reset {
+    width: 20vw;
+    height: 8vh;
+    background-color: var(--yellow-color);
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.submit:hover, .reset:hover, .gameover button:hover, .submit:focus, .reset:focus, .gameover button:focus {
+    background-color: var(--orange-color);
+    box-shadow: 5px 4px 0 black;
+}
+
+.gameover {
+    /* display: none; */
+    width: 60vw;
+    height: 60vh;
+    margin: 1rem auto;
+    padding: 1rem;
+    border: 2px solid black;
+    background-color: white;
+    box-shadow: 5px 4px var(--yellow-color);
+    border-radius: 1rem;
+}
+
+.gameover h2 {
+    text-align: center;
+    margin: 1.5rem;
+    font-size: 2rem;
+    animation: hovering 3s ease-in-out forwards infinite;
+}
+
+.gameover h3 {
+    text-align: center;
+   
+}
+
+.gameover p {
+    text-align: center;
+    line-height: 1.5;
+}
+
+.gameover button {
+    display: block;
+    margin: 2rem auto;
+    font: inherit;
+    background-color: var(--yellow-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.gameover a {
+    text-decoration: none;
+}
+
+
+
+@media screen and (min-width: 769px) {
+    .heading {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }    
+
+    #checkword {
+        width: 40vw;
+    }
+
+    .gameover {
+        width: 40vw;
+        height: 60vh;
+    }
+
+    .gameover button {
+        margin: 2rem auto;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .heading1, .heading2 {
+        font-size: 3rem;
+    }
+
+    .heading {
+        margin-bottom: 3rem;
+    }
+
+    .timer, .scorediv {
+        width: 50vw;
+        height: 8vh;
+        margin: 0.5rem auto;
+        font-size: 0.9rem;
+    }
+
+    .score-and-timer {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    .currentword {
+        gap: 2rem;
+    }
+
+    #word {
+        font-size: 2rem;
+    }
+
+    #meaning {
+        font-size: 1rem;
+    }
+
+    #checkword {
+        font-size: 0.9rem;
+    }
+
+    .submit, .reset {
+        width: 30vw;
+        height: 7vh;
+        font-size: 1rem;
+    }
+
+    .submit:focus, .reset:focus {
+        background-color: var(--orange-color);
+    }
+}
