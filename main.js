@@ -32,6 +32,7 @@ const initGame = () => {
     timeDisplayed.innerHTML = 30;
     initTimer(30);
     scoreDisplayed.innerHTML = currentScore;
+    localStorage["finalscore"] = currentScore;
     inputField.value = "";
 
     let index = Math.floor(Math.random() * wordsArray.length);
